@@ -1,6 +1,6 @@
 {
   "name": "ustyler",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A minimalistic CSS style injector",
   "main": "./cjs/index.js",
   "scripts": {
