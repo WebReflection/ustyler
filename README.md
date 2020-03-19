@@ -2,17 +2,17 @@
 
 [![Build Status](https://travis-ci.com/WebReflection/ustyler.svg?branch=master)](https://travis-ci.com/WebReflection/ustyler) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/ustyler/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/ustyler?branch=master)
 
-A minimalistic CSS style injector.
+A minimalistic CSS style injector, usable either as function or as template literal tag.
 
 ```js
-import ustyler from 'ustyler';
-// const ustyler = require('ustyler');
+import css from 'ustyler';
+// const css = require('ustyler');
 
-const styleNode = ustyler(`
+const style = css`
   body {
     font-family: sans-serif;
   }
-`);
+`;
 
-setTimeout(() => styleNode.remove(), 1000);
+setTimeout(() => style.remove(), 1000);
 ```

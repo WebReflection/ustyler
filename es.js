@@ -1,1 +1,1 @@
-var ustyle=function(e){"use strict";return e.default=e=>{const t=document.createElement("style");return t.type="text/css",t.appendChild(document.createTextNode(e)),document.head.appendChild(t)},e}({}).default;
+var ustyle=function(t){"use strict";const e=t=>{const e=document.createElement("style");return e.type="text/css",e.appendChild(document.createTextNode(t)),document.head.appendChild(e)};return t.default=function(t){if("string"==typeof t)return e(t);const n=[t[0]];for(let e=1,{length:r}=arguments;e<r;e++)n.push(arguments[e],t[e]);return e(n.join(""))},t}({}).default;
