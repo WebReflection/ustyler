@@ -8,9 +8,11 @@ A minimalistic CSS style injector.
 import ustyler from 'ustyler';
 // const ustyler = require('ustyler');
 
-ustyler(`
+const styleNode = ustyler(`
   body {
     font-family: sans-serif;
   }
 `);
+
+setTimeout(() => styleNode.remove(), 1000);
 ```

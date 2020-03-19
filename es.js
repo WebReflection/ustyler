@@ -1,1 +1,1 @@
-var ustyle=function(e){"use strict";return e.default=e=>{if((e||"").length){const t=document.createElement("style");t.type="text/css",t.appendChild(document.createTextNode(e)),document.head.appendChild(t)}},e}({}).default;
+var ustyle=function(e){"use strict";return e.default=e=>{const t=document.createElement("style");return t.type="text/css",t.appendChild(document.createTextNode(e)),document.head.appendChild(t)},e}({}).default;

@@ -2,7 +2,7 @@ global.document = {
   createElement: name => ({
     name,
     appendChild(child) {
-      this.child = child;
+      return (this.child = child);
     }
   }),
   createTextNode(text) {
@@ -14,11 +14,10 @@ document.head = document.createElement('head');
 
 const ustyle = require('../cjs');
 
-ustyle('body{color:green}');
-ustyle('');
-ustyle();
+const style = ustyle('body{color:green}');
 
-console.assert(document.head.child.name === 'style', 'correct name');
-console.assert(document.head.child.type === 'text/css', 'correct type');
-console.assert(document.head.child.child.name === '#text', 'correct text node');
-console.assert(document.head.child.child.text === 'body{color:green}', 'correct css text');
+console.assert(document.head.child === style);
+console.assert(style.name === 'style', 'correct name');
+console.assert(style.type === 'text/css', 'correct type');
+console.assert(style.child.name === '#text', 'correct text node');
+console.assert(style.child.text === 'body{color:green}', 'correct css text');
