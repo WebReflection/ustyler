@@ -8,27 +8,17 @@ var ustyle = (function (exports) {
    * @return {HTMLStyleElement} the node appended as head last child.
    */
   function ustyler(template) {
-    if (typeof template === 'string') return create(template);
-    var text = [template[0]];
+    var text = typeof template == 'string' ? [template] : [template[0]];
 
     for (var i = 1, length = arguments.length; i < length; i++) {
       text.push(arguments[i], template[i]);
     }
 
-    return create(text.join(''));
-  }
-  /**
-   * Create, append, and return, a style node with the passed CSS content.
-   * @param {string} text the CSS text
-   * @return {HTMLStyleElement} the node appended as head last child.
-   */
-
-  var create = function create(text) {
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.appendChild(document.createTextNode(text));
+    style.appendChild(document.createTextNode(text.join('')));
     return document.head.appendChild(style);
-  };
+  }
 
   exports.default = ustyler;
 

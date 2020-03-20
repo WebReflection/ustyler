@@ -6,23 +6,12 @@
  * @return {HTMLStyleElement} the node appended as head last child.
  */
 function ustyler(template) {
-  if (typeof template === 'string')
-    return create(template);
-  const text = [template[0]];
+  const text = typeof template == 'string' ? [template] : [template[0]];
   for (let i = 1, {length} = arguments; i < length; i++)
     text.push(arguments[i], template[i]);
-  return create(text.join(''));
-}
-module.exports = ustyler;
-
-/**
- * Create, append, and return, a style node with the passed CSS content.
- * @param {string} text the CSS text
- * @return {HTMLStyleElement} the node appended as head last child.
- */
-const create = text => {
   const style = document.createElement('style');
   style.type = 'text/css';
-  style.appendChild(document.createTextNode(text));
+  style.appendChild(document.createTextNode(text.join('')));
   return document.head.appendChild(style);
-};
+}
+module.exports = ustyler;
